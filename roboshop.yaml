@@ -45,12 +45,12 @@
   #    loop: "{{ instances }}"
   #    when: action == "delete"
 
-  #  - name: delete ec2 instances 
-  #    amazon.aws.route53:
-  #      state: absent 
-  #      name: "roboshop-{{ item }}"
-  #      region: us-east-1
-  #      wait: false 
-  #    loop: "{{ instances }}"
-  #    when: action == "delete"
+   - name: delete ec2 instances 
+     amazon.aws.route53:
+       state: absent 
+       name: "roboshop-{{ item }}"
+       region: us-east-1
+       wait: false 
+     loop: "{{ instances }}"
+     when: action == "delete"
     

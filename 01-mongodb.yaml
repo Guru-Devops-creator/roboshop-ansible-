@@ -1,0 +1,9 @@
+- name: create mongodb 
+  hosts: mongodb
+  become: yes
+  tasks: 
+  - name: Copy app.conf with specific permissions
+      copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
+        
