@@ -37,7 +37,7 @@
 
    - name: delete r53 records 
      amazon.aws.route53:
-       state: abeset 
+       state: absent 
        zone: "{{ domain_name }}"
        record: "{{ item }}.{{ domain_name }}"
        ttl: 1
