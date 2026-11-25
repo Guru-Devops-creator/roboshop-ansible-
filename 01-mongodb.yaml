@@ -9,6 +9,15 @@
 
   - name: test the inventory variable from group vars
     debug:
-     msg: "{{ app_name }}"  
+     msg: "{{ app_name }}" 
+
+  - name: install mongodb
+    package:
+     state: present 
+  - name: start mongodb
+    service:
+     name: mongodb
+     state: started
+     enabled: yes  
       
         
